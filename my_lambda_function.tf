@@ -9,7 +9,7 @@ data "archive_file" "init" {
 }
 
 resource "aws_lambda_function" "test_lambda" {
-  filename      = lambda-zip-location
+  filename      = locals.lambda-zip-location
   function_name = "my_function"
   role          = aws_iam_role.my_lambda_iam_role.arn
   handler       = "my_function.hello"
